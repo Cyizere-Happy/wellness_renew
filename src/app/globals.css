@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap');
+@import "tailwindcss";
+
+/* ── Base CSS variables ─────────────────────────────────────── */
+:root {
+  --background: #ffffff;
+  --foreground: #111110;
+}
+
+/* ── Custom color tokens for Tailwind utilities ─────────────── */
+@theme {
+  --color-sage: #6b7c5a;
+  --color-sage-light: #8fa67a;
+  --color-sage-dark: #4a5640;
+  --color-cream: #f5f0e8;
+  --color-pale-green: #f2f7f1;
+  --color-warm-brown: #8b6f4e;
+  --color-charcoal: #111110;
+  --color-card-dark: #1e1e1a;
+  --color-tan: #c4a882;
+}
+
+/* ── Theme tokens that reference CSS variables ──────────────── */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-nunito-sans);
+  --font-serif: var(--font-cormorant);
+}
+
+/* ── Base styles ────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-nunito-sans, system-ui, sans-serif);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
+
+/* ── Keyframe animations ────────────────────────────────────── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ── Animation utility classes ──────────────────────────────── */
+.animate-fade-in-up {
+  opacity: 0;
+  animation: fadeInUp 0.95s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-fade-in {
+  opacity: 0;
+  animation: fadeIn 1.1s ease-out forwards;
+}
