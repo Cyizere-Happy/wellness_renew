@@ -1,3 +1,5 @@
+import Reveal from '@/components/anim/Reveal'
+
 export default function OurApproach() {
   return (
     <section
@@ -8,7 +10,7 @@ export default function OurApproach() {
       <div className="max-w-7xl mx-auto px-10 lg:px-32">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-24 items-center">
           {/* Left: Large serif heading */}
-          <div>
+          <Reveal variant="left">
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-[3rem] text-charcoal leading-[1.1]">
               Compassionate<br />
               support,{' '}
@@ -19,10 +21,10 @@ export default function OurApproach() {
 
             {/* Decorative line */}
             <div className="mt-6 w-16 h-[1px] bg-sage/40" />
-          </div>
+          </Reveal>
 
           {/* Right: Description */}
-          <div className="space-y-5">
+          <Reveal variant="right" delay={120} className="space-y-5">
             <p className="text-charcoal/70 leading-[1.85] text-[13px]">
               We understand that asking for help can feel like the hardest first step.
               At Wellness Renew, we create a safe, non-judgmental space where you are
@@ -56,7 +58,7 @@ export default function OurApproach() {
                 </svg>
               </a>
             </div>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

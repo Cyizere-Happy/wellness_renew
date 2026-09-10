@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Navbar from '@/components/navigation/Navbar'
 import Footer from '@/components/layout/Footer'
+import Reveal from '@/components/anim/Reveal'
 
 export const metadata: Metadata = {
   title: 'Our Team | Wellness Renew',
@@ -42,7 +43,7 @@ export default function TeamPage() {
 
       <main className="pt-32 lg:pt-40 pb-32">
         {/* ── HEADER ──────────────────────────────────────────── */}
-        <div className="max-w-7xl mx-auto px-8 lg:px-16 mb-20 lg:mb-32 text-center">
+        <Reveal stagger className="max-w-7xl mx-auto px-8 lg:px-16 mb-20 lg:mb-32 text-center">
           <p className="text-sage text-[10px] tracking-[0.35em] uppercase font-medium mb-4">
             The Practitioners
           </p>
@@ -53,15 +54,15 @@ export default function TeamPage() {
           <p className="max-w-2xl mx-auto text-charcoal/60 text-[15px] leading-[1.9]">
             We are a collective of highly accredited psychologists, therapists, and coaches dedicated to one common goal: providing compassionate, evidence-based support that truly transforms lives.
           </p>
-        </div>
+        </Reveal>
 
         {/* ── TEAM GRID ───────────────────────────────────────── */}
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-24">
+          <Reveal stagger childY={40} className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-24">
             {TEAM.map((member, i) => (
-              <div 
-                key={member.id} 
-                className={`group ${i === 1 ? 'lg:mt-24' : ''}`} // Offset the middle item on large screens
+              <div
+                key={member.id}
+                className={`anim-card group ${i === 1 ? 'lg:mt-24' : ''}`} // Offset the middle item on large screens
               >
                 {/* Image Container */}
                 <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl mb-8 bg-charcoal/5">
@@ -94,16 +95,18 @@ export default function TeamPage() {
                 </div>
               </div>
             ))}
-          </div>
+          </Reveal>
         </div>
 
         {/* ── CTA ─────────────────────────────────────────────── */}
         <div className="max-w-4xl mx-auto px-8 mt-32 lg:mt-48 text-center">
-          <div className="inline-block p-10 lg:p-16 rounded-[3rem] bg-[#d1decb] w-full relative overflow-hidden">
+          <Reveal variant="image" className="inline-block p-10 lg:p-16 rounded-[3rem] bg-[#d1decb] w-full relative overflow-hidden">
              {/* Decorative W in background */}
-             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-sage-dark/10 leading-none select-none pointer-events-none"
-              style={{ fontFamily: '"Alex Brush", cursive', fontSize: '300px' }}
-            >W</div>
+             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+               <span className="anim-sway block text-sage-dark/10 leading-none select-none"
+                style={{ fontFamily: '"Alex Brush", cursive', fontSize: '300px' }}
+              >W</span>
+             </div>
 
             <div className="relative z-10">
               <h3 className="font-serif text-3xl lg:text-4xl text-charcoal mb-4">
@@ -119,7 +122,7 @@ export default function TeamPage() {
                 Contact Us
               </a>
             </div>
-          </div>
+          </Reveal>
         </div>
 
       </main>

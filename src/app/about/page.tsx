@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Navbar from '@/components/navigation/Navbar'
 import Footer from '@/components/layout/Footer'
+import Reveal from '@/components/anim/Reveal'
 
 export const metadata: Metadata = {
   title: 'About Us | Wellness Renew',
@@ -59,7 +60,7 @@ export default function AboutPage() {
               alt="A compassionate wellness consultation in a warm, beautifully designed space"
               fill
               priority
-              className="object-cover object-center"
+              className="object-cover object-center anim-kenburns"
               sizes="100vw"
             />
             {/* Overlays */}
@@ -68,18 +69,18 @@ export default function AboutPage() {
           </div>
 
           {/* Hero text anchored to bottom-left */}
-          <div className="relative z-10 w-full max-w-7xl mx-auto px-8 lg:px-16 pb-16 lg:pb-24">
+          <Reveal stagger className="relative z-10 w-full max-w-7xl mx-auto px-8 lg:px-16 pb-16 lg:pb-24">
             <p className="text-[#d1decb] text-[10px] tracking-[0.4em] uppercase font-medium mb-4">
               Our Story
             </p>
             <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl text-white leading-[1.0] tracking-tight max-w-3xl">
               Wellbeing rooted<br />in compassion.
             </h1>
-          </div>
+          </Reveal>
 
           {/* Decorative signature W — lives OUTSIDE overflow-hidden, bleeds into next section */}
           <div
-            className="absolute pointer-events-none select-none text-[#d1decb] leading-none z-20"
+            className="anim-drift absolute pointer-events-none select-none text-[#d1decb] leading-none z-20"
             style={{
               fontFamily: '"Alex Brush", cursive',
               fontSize: 'clamp(200px, 28vw, 400px)',
@@ -99,7 +100,7 @@ export default function AboutPage() {
           className="bg-[#f5f4f0] py-20 lg:py-28"
         >
           <div className="max-w-7xl mx-auto px-8 lg:px-16 grid lg:grid-cols-2 gap-16 items-center">
-            <div>
+            <Reveal variant="left">
               <p className="text-sage text-[10px] tracking-[0.35em] uppercase font-medium mb-5">
                 What We Stand For
               </p>
@@ -114,10 +115,10 @@ export default function AboutPage() {
               <p className="text-charcoal/60 text-[15px] leading-[1.9]">
                 We are a modern wellbeing platform built around the understanding that healing is not linear, and that lasting transformation requires patience, expertise, and above all — a genuine human connection.
               </p>
-            </div>
+            </Reveal>
 
             {/* Stats grid */}
-            <div className="grid grid-cols-2 gap-px bg-charcoal/10 rounded-2xl overflow-hidden shadow-xl">
+            <Reveal stagger className="grid grid-cols-2 gap-px bg-charcoal/10 rounded-2xl overflow-hidden shadow-xl">
               {STATS.map(({ value, label }) => (
                 <div key={label} className="bg-white p-10 flex flex-col justify-center">
                   <span
@@ -131,7 +132,7 @@ export default function AboutPage() {
                   </span>
                 </div>
               ))}
-            </div>
+            </Reveal>
           </div>
         </section>
 
@@ -143,7 +144,7 @@ export default function AboutPage() {
         >
           <div className="max-w-7xl mx-auto px-8 lg:px-16 grid lg:grid-cols-[1fr_1.1fr] gap-16 lg:gap-24 items-center">
             {/* Image */}
-            <div className="relative">
+            <Reveal variant="image" className="relative">
               <div className="relative rounded-2xl overflow-hidden aspect-[3/4] max-w-sm mx-auto lg:mx-0 shadow-2xl">
                 <Image
                   src="/images/about-founder.jpg"
@@ -158,10 +159,10 @@ export default function AboutPage() {
                 <p className="text-charcoal text-xs font-bold tracking-wide mb-1">Accredited Practitioner</p>
                 <p className="text-charcoal/50 text-[10px] leading-relaxed">BACP Member · CIPD Certified · 8+ Years Experience</p>
               </div>
-            </div>
+            </Reveal>
 
             {/* Text */}
-            <div>
+            <Reveal variant="right" delay={120}>
               <p className="text-sage-dark text-[10px] tracking-[0.35em] uppercase font-medium mb-5">
                 Meet the Founder
               </p>
@@ -181,14 +182,14 @@ export default function AboutPage() {
               <Link
                 href="#contact"
                 id="about-founder-cta"
-                className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-charcoal hover:bg-[#2a2a24] text-[#f5f4f0] text-[10px] font-bold tracking-[0.2em] uppercase transition-all duration-300 hover:shadow-xl"
+                className="anim-lift inline-flex items-center gap-3 px-8 py-4 rounded-full bg-charcoal hover:bg-[#2a2a24] text-[#f5f4f0] text-[10px] font-bold tracking-[0.2em] uppercase transition-all duration-300 hover:shadow-xl group"
               >
                 Work With Us
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-0.5 transition-transform">
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
               </Link>
-            </div>
+            </Reveal>
           </div>
         </section>
 
@@ -199,16 +200,16 @@ export default function AboutPage() {
           className="bg-white py-20 lg:py-28"
         >
           <div className="max-w-7xl mx-auto px-8 lg:px-16">
-            <div className="max-w-xl mb-16">
+            <Reveal variant="rise" className="max-w-xl mb-16">
               <p className="text-sage text-[10px] tracking-[0.35em] uppercase font-medium mb-4">
                 Our Principles
               </p>
               <h2 className="font-serif text-4xl lg:text-5xl text-charcoal leading-[1.1]">
                 The values that guide<br />everything we do.
               </h2>
-            </div>
+            </Reveal>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-charcoal/8 rounded-2xl overflow-hidden">
+            <Reveal stagger className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-charcoal/8 rounded-2xl overflow-hidden">
               {VALUES.map(({ number, title, body }) => (
                 <div
                   key={number}
@@ -225,7 +226,7 @@ export default function AboutPage() {
                   </p>
                 </div>
               ))}
-            </div>
+            </Reveal>
           </div>
         </section>
 
