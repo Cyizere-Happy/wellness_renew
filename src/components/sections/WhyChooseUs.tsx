@@ -1,3 +1,5 @@
+import Reveal from '@/components/anim/Reveal'
+
 const FEATURES = [
   {
     id: 'qualified',
@@ -62,7 +64,7 @@ export default function WhyChooseUs() {
       <div className="max-w-7xl mx-auto px-10 lg:px-32">
         <div className="grid lg:grid-cols-[1fr_1.1fr] gap-14 lg:gap-24 items-start">
           {/* Left column */}
-          <div className="lg:sticky lg:top-28">
+          <Reveal variant="left" className="lg:sticky lg:top-28">
             <p className="text-sage-dark text-[10px] tracking-[0.35em] uppercase mb-4 font-bold">
               Wellness Renew
             </p>
@@ -81,17 +83,17 @@ export default function WhyChooseUs() {
             <a
               href="#contact"
               id="why-us-cta-btn"
-              className="mt-8 inline-flex items-center gap-2 px-6 py-3 bg-white border border-charcoal/10 hover:border-charcoal/30 text-charcoal text-xs font-semibold rounded-full transition-all duration-200 hover:shadow-md group"
+              className="anim-lift mt-8 inline-flex items-center gap-2 px-6 py-3 bg-white border border-charcoal/10 hover:border-charcoal/30 text-charcoal text-xs font-semibold rounded-full transition-all duration-200 hover:shadow-md group"
             >
               Book a Free Consultation
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-0.5 transition-transform">
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
             </a>
-          </div>
+          </Reveal>
 
           {/* Right column */}
-          <div className="space-y-0 divide-y divide-charcoal/10">
+          <Reveal stagger className="space-y-0 divide-y divide-charcoal/10">
             {FEATURES.map((feature) => (
               <div key={feature.id} id={`feature-${feature.id}`} className="flex gap-5 py-8 group">
                 <div className="shrink-0 w-11 h-11 rounded-full bg-white shadow-sm border border-charcoal/5 group-hover:border-sage/40 group-hover:bg-pale-green flex items-center justify-center text-sage-dark transition-all duration-300 mt-0.5">
@@ -106,7 +108,7 @@ export default function WhyChooseUs() {
                 </div>
               </div>
             ))}
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

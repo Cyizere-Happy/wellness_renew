@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import Reveal from '@/components/anim/Reveal'
 
 const SERVICES = [
   {
@@ -72,14 +73,14 @@ export default function ServicesCarousel() {
     >
       <div className="max-w-7xl mx-auto px-10 lg:px-32">
         {/* Section heading */}
-        <div className="text-center mb-14">
+        <Reveal variant="rise" className="text-center mb-14">
           <p className="text-sage-dark text-[10px] tracking-[0.35em] uppercase mb-3 font-medium">
             How We Can Help
           </p>
           <h2 className="font-serif text-3xl lg:text-4xl text-charcoal">
             Our Wellbeing Services
           </h2>
-        </div>
+        </Reveal>
 
         {/* Carousel */}
         <div className="relative">
@@ -96,7 +97,7 @@ export default function ServicesCarousel() {
           </button>
 
           {/* Cards */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4 items-start">
+          <Reveal stagger className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4 items-start">
             {visibleIndices.map((serviceIdx, slotIdx) => {
               const service = SERVICES[serviceIdx]
               const isFeatured = slotIdx === 1
@@ -104,7 +105,7 @@ export default function ServicesCarousel() {
               return (
                 <div
                   key={`${service.id}-slot${slotIdx}`}
-                  className={`rounded-2xl overflow-hidden flex flex-col transition-all duration-500 ${
+                  className={`anim-card rounded-2xl overflow-hidden flex flex-col ${
                     isFeatured
                       ? 'bg-cream shadow-2xl shadow-black/50 ring-1 ring-tan/20'
                       : 'bg-[#4a5744]'
@@ -162,7 +163,7 @@ export default function ServicesCarousel() {
                 </div>
               )
             })}
-          </div>
+          </Reveal>
 
           {/* Right arrow */}
           <button

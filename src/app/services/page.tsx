@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Navbar from '@/components/navigation/Navbar'
 import Footer from '@/components/layout/Footer'
 import BookingButton from '@/components/ui/BookingButton'
+import Reveal from '@/components/anim/Reveal'
 
 export const metadata: Metadata = {
   title: 'Our Services | Wellness Renew',
@@ -34,12 +35,12 @@ export default function ServicesPage() {
           </div>
 
           {/* Main Title */}
-          <div className="z-10 mt-20 lg:mt-0 lg:ml-24 max-w-2xl">
+          <Reveal stagger className="z-10 mt-20 lg:mt-0 lg:ml-24 max-w-2xl">
             <h1 className="font-serif text-5xl sm:text-7xl lg:text-[7rem] text-charcoal leading-[0.9] tracking-tight">
               Bespoke<br />
               <span className="text-sage italic ml-10 lg:ml-20">Wellbeing</span>
             </h1>
-            
+
             <div className="mt-12 lg:mt-20 lg:ml-32 max-w-sm">
               <p className="text-charcoal/70 text-xs leading-[2] uppercase tracking-[0.15em] font-medium mb-6">
                 A tailored approach to healing.
@@ -48,10 +49,10 @@ export default function ServicesPage() {
                 We believe in transforming ordinary spaces into extraordinary experiences of self-discovery. Explore our core pillars of support.
               </p>
             </div>
-          </div>
+          </Reveal>
 
           {/* Decorative Abstract Image (Top Right) */}
-          <div className="absolute -top-10 right-0 lg:right-10 w-64 h-80 opacity-20 pointer-events-none hidden lg:block">
+          <div className="anim-float absolute -top-10 right-0 lg:right-10 w-64 h-80 opacity-20 pointer-events-none hidden lg:block">
             <Image src="/images/hero-nature.jpg" alt="" fill className="object-cover rounded-full blur-[2px]" />
           </div>
         </div>
@@ -64,9 +65,9 @@ export default function ServicesPage() {
 
           {/* SERVICE 01: COUNSELLING */}
           <section className="relative grid lg:grid-cols-12 gap-8 items-center mb-32 lg:mb-64">
-            
+
             {/* Collage Image Cluster */}
-            <div className="lg:col-span-7 relative h-[60vh] lg:h-[80vh] w-full">
+            <Reveal variant="left" className="lg:col-span-7 relative h-[60vh] lg:h-[80vh] w-full">
               {/* Background abstract */}
               <div className="absolute bottom-10 left-0 w-3/4 h-3/4 opacity-40 grayscale sepia">
                 <Image src="/images/hero-nature-new.png" alt="" fill className="object-cover rounded-3xl" />
@@ -85,10 +86,10 @@ export default function ServicesPage() {
                   <Image src="/images/hero-room.png" alt="" fill className="object-cover" />
                 </div>
               </div>
-            </div>
+            </Reveal>
 
             {/* Text Block */}
-            <div className="lg:col-span-4 lg:col-start-9 relative z-20">
+            <Reveal variant="right" delay={120} className="lg:col-span-4 lg:col-start-9 relative z-20">
               <span className="block font-serif text-charcoal/20 text-8xl leading-none absolute -top-16 -left-10 select-none">01</span>
               <p className="text-sage text-[9px] tracking-[0.3em] uppercase font-semibold mb-4">Therapy</p>
               <h2 className="font-serif text-4xl text-charcoal mb-6">Compassionate<br />Counselling</h2>
@@ -101,14 +102,14 @@ export default function ServicesPage() {
                 </span>
                 <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-charcoal">Book a session</span>
               </BookingButton>
-            </div>
+            </Reveal>
           </section>
 
           {/* SERVICE 02: LIFE COACHING */}
           <section className="relative grid lg:grid-cols-12 gap-8 items-center mb-32 lg:mb-64">
-            
+
             {/* Text Block (Left on Desktop) */}
-            <div className="lg:col-span-4 lg:col-start-2 relative z-20 order-2 lg:order-1 text-right lg:text-left">
+            <Reveal variant="left" delay={120} className="lg:col-span-4 lg:col-start-2 relative z-20 order-2 lg:order-1 text-right lg:text-left">
               <span className="block font-serif text-charcoal/20 text-8xl leading-none absolute -top-16 -right-10 lg:-right-0 lg:left-32 select-none">02</span>
               <p className="text-sage text-[9px] tracking-[0.3em] uppercase font-semibold mb-4">Guidance</p>
               <h2 className="font-serif text-4xl text-charcoal mb-6">Strategic<br />Life Coaching</h2>
@@ -121,10 +122,10 @@ export default function ServicesPage() {
                 </span>
                 <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-charcoal">Find your path</span>
               </BookingButton>
-            </div>
+            </Reveal>
 
             {/* Collage Image Cluster */}
-            <div className="lg:col-span-6 lg:col-start-7 relative h-[60vh] lg:h-[75vh] w-full order-1 lg:order-2">
+            <Reveal variant="right" className="lg:col-span-6 lg:col-start-7 relative h-[60vh] lg:h-[75vh] w-full order-1 lg:order-2">
               <div className="absolute top-0 right-0 w-full h-[90%] bg-[#d1decb] rounded-t-full overflow-hidden shadow-xl">
                 <Image src="/images/life-coaching.png" alt="Life Coaching" fill className="object-cover mix-blend-multiply opacity-80" />
               </div>
@@ -135,13 +136,13 @@ export default function ServicesPage() {
                 <p>Focus.</p>
                 <p>Direction.</p>
               </div>
-            </div>
+            </Reveal>
           </section>
 
           {/* SERVICE 03: PERSONAL EMPOWERMENT */}
           <section className="relative grid lg:grid-cols-12 gap-8 items-center mb-32 lg:mb-64">
-            
-            <div className="lg:col-span-7 relative h-[60vh] lg:h-[80vh] w-full">
+
+            <Reveal variant="left" className="lg:col-span-7 relative h-[60vh] lg:h-[80vh] w-full">
               {/* Main Image */}
               <div className="absolute top-1/2 -translate-y-1/2 left-0 w-[85%] h-[85%] shadow-2xl z-10">
                 <Image src="/images/empowerment.png" alt="Personal Empowerment" fill className="object-cover" />
@@ -155,9 +156,9 @@ export default function ServicesPage() {
               <div className="absolute -bottom-8 right-20 w-32 h-32 rounded-full overflow-hidden shadow-xl z-20">
                 <Image src="/images/deep-tissue.png" alt="" fill className="object-cover grayscale" />
               </div>
-            </div>
+            </Reveal>
 
-            <div className="lg:col-span-4 lg:col-start-9 relative z-20">
+            <Reveal variant="right" delay={120} className="lg:col-span-4 lg:col-start-9 relative z-20">
               <span className="block font-serif text-charcoal/20 text-8xl leading-none absolute -top-16 -left-10 select-none">03</span>
               <p className="text-sage text-[9px] tracking-[0.3em] uppercase font-semibold mb-4">Strength</p>
               <h2 className="font-serif text-4xl text-charcoal mb-6">Personal<br />Empowerment</h2>
@@ -170,13 +171,13 @@ export default function ServicesPage() {
                 </span>
                 <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-charcoal">Take Control</span>
               </BookingButton>
-            </div>
+            </Reveal>
           </section>
 
           {/* SERVICE 04: HEALTHCARE STAFFING */}
           <section className="relative grid lg:grid-cols-12 gap-8 items-center mb-20 lg:mb-32">
-            
-            <div className="lg:col-span-4 lg:col-start-2 relative z-20 order-2 lg:order-1 text-right lg:text-left">
+
+            <Reveal variant="left" delay={120} className="lg:col-span-4 lg:col-start-2 relative z-20 order-2 lg:order-1 text-right lg:text-left">
               <span className="block font-serif text-charcoal/20 text-8xl leading-none absolute -top-16 -right-10 lg:-right-0 lg:left-32 select-none">04</span>
               <p className="text-sage text-[9px] tracking-[0.3em] uppercase font-semibold mb-4">Organisational</p>
               <h2 className="font-serif text-4xl text-charcoal mb-6">Healthcare<br />Staffing</h2>
@@ -189,19 +190,21 @@ export default function ServicesPage() {
                 </span>
                 <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-charcoal">Enquire Now</span>
               </BookingButton>
-            </div>
+            </Reveal>
 
-            <div className="lg:col-span-7 lg:col-start-6 relative h-[60vh] lg:h-[70vh] w-full order-1 lg:order-2">
+            <Reveal variant="right" className="lg:col-span-7 lg:col-start-6 relative h-[60vh] lg:h-[70vh] w-full order-1 lg:order-2">
               <div className="absolute inset-0 bg-charcoal p-2 shadow-2xl -rotate-2 hover:rotate-1 transition-transform duration-700 z-10">
                 <div className="relative w-full h-full">
                   <Image src="/images/healthcare.png" alt="Healthcare Staffing" fill className="object-cover opacity-90" />
                 </div>
               </div>
-              
-              <div className="absolute top-1/2 -translate-y-1/2 -left-12 lg:-left-24 text-[#d1decb] leading-none z-0 pointer-events-none opacity-30 select-none"
-                style={{ fontFamily: '"Alex Brush", cursive', fontSize: 'clamp(150px, 20vw, 300px)' }}
-              >W</div>
-            </div>
+
+              <div className="absolute top-1/2 -translate-y-1/2 -left-12 lg:-left-24 z-0 pointer-events-none opacity-30 select-none">
+                <span className="anim-sway block text-[#d1decb] leading-none"
+                  style={{ fontFamily: '"Alex Brush", cursive', fontSize: 'clamp(150px, 20vw, 300px)' }}
+                >W</span>
+              </div>
+            </Reveal>
           </section>
 
         </div>
@@ -217,13 +220,15 @@ export default function ServicesPage() {
             <p>awaits.</p>
           </div>
 
-          <h3 className="font-serif text-4xl lg:text-5xl text-charcoal mb-10">
+          <Reveal as="h3" variant="rise" className="font-serif text-4xl lg:text-5xl text-charcoal mb-10">
             Let&apos;s piece it all together.
-          </h3>
-          
-          <BookingButton className="inline-flex items-center gap-3 px-10 py-5 rounded-full bg-charcoal hover:bg-[#2a2a24] text-[#f5f4f0] text-[10px] font-bold tracking-[0.25em] uppercase transition-all duration-300 shadow-xl hover:scale-105">
-            Book your consultation
-          </BookingButton>
+          </Reveal>
+
+          <Reveal variant="rise" delay={140}>
+            <BookingButton className="inline-flex items-center gap-3 px-10 py-5 rounded-full bg-charcoal hover:bg-[#2a2a24] text-[#f5f4f0] text-[10px] font-bold tracking-[0.25em] uppercase transition-all duration-300 shadow-xl hover:scale-105">
+              Book your consultation
+            </BookingButton>
+          </Reveal>
         </div>
 
       </main>

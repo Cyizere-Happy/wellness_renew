@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Navbar from '@/components/navigation/Navbar'
 import Footer from '@/components/layout/Footer'
+import Reveal from '@/components/anim/Reveal'
 import { useState } from 'react'
 
 const CONTACT_INFO = [
@@ -102,23 +103,23 @@ export default function ContactPage() {
               src="/images/contact-hero.jpg"
               alt="A warm, calming wellness space"
               fill priority
-              className="object-cover object-center"
+              className="object-cover object-center anim-kenburns"
               sizes="100vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/10" />
             <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent" />
           </div>
 
-          <div className="relative z-10 w-full max-w-7xl mx-auto px-8 lg:px-16 pb-14 lg:pb-20">
+          <Reveal stagger className="relative z-10 w-full max-w-7xl mx-auto px-8 lg:px-16 pb-14 lg:pb-20">
             <p className="text-[#d1decb] text-[10px] tracking-[0.4em] uppercase font-medium mb-3">Get In Touch</p>
             <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl text-white leading-[1.0] tracking-tight">
               Let&apos;s start a<br />conversation.
             </h1>
-          </div>
+          </Reveal>
 
           {/* Decorative W - lives outside overflow-hidden */}
           <div
-            className="absolute pointer-events-none select-none text-[#d1decb] leading-none z-20"
+            className="anim-drift absolute pointer-events-none select-none text-[#d1decb] leading-none z-20"
             style={{ fontFamily: '"Alex Brush", cursive', fontSize: 'clamp(200px, 28vw, 400px)', bottom: '-24vh', right: '6vw', opacity: 0.75 }}
           >W</div>
         </section>
@@ -132,7 +133,7 @@ export default function ContactPage() {
           <div className="max-w-7xl mx-auto px-8 lg:px-16 grid lg:grid-cols-[1fr_1.6fr] gap-16 lg:gap-24 items-start">
 
             {/* Left: Contact info */}
-            <div>
+            <Reveal variant="left">
               <p className="text-sage text-[10px] tracking-[0.35em] uppercase font-medium mb-4">Reach Out</p>
               <h2 className="font-serif text-3xl lg:text-4xl text-charcoal leading-[1.15] mb-10">
                 We&apos;d love to<br />hear from you.
@@ -167,7 +168,7 @@ export default function ContactPage() {
                 {SOCIALS.map(({ label, letter, href }) => (
                   <a
                     key={label} href={href} aria-label={label}
-                    className="w-10 h-10 rounded-full border border-charcoal/15 hover:border-[#d1decb] hover:bg-[#d1decb] flex items-center justify-center text-charcoal/50 hover:text-charcoal text-[11px] font-bold transition-all duration-300"
+                    className="anim-lift w-10 h-10 rounded-full border border-charcoal/15 hover:border-[#d1decb] hover:bg-[#d1decb] flex items-center justify-center text-charcoal/50 hover:text-charcoal text-[11px] font-bold transition-all duration-300"
                   >
                     {letter}
                   </a>
@@ -188,10 +189,10 @@ export default function ContactPage() {
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </Link>
               </div>
-            </div>
+            </Reveal>
 
             {/* Right: Form */}
-            <div className="bg-white rounded-3xl p-8 lg:p-10 shadow-xl shadow-charcoal/5 border border-charcoal/5">
+            <Reveal variant="right" delay={120} className="bg-white rounded-3xl p-8 lg:p-10 shadow-xl shadow-charcoal/5 border border-charcoal/5">
               {!submitted ? (
                 <>
                   <p className="text-sage text-[10px] tracking-[0.35em] uppercase font-medium mb-2">Send a Message</p>
@@ -279,7 +280,7 @@ export default function ContactPage() {
                     <button
                       type="submit"
                       id="contact-submit-btn"
-                      className="w-full py-4 rounded-full bg-charcoal hover:bg-[#2a2a24] text-[#f5f4f0] text-[10px] font-bold tracking-[0.25em] uppercase transition-all duration-300 hover:shadow-xl group flex items-center justify-center gap-3"
+                      className="anim-lift w-full py-4 rounded-full bg-charcoal hover:bg-[#2a2a24] text-[#f5f4f0] text-[10px] font-bold tracking-[0.25em] uppercase transition-all duration-300 hover:shadow-xl group flex items-center justify-center gap-3"
                     >
                       Send Your Message
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" className="group-hover:translate-x-1 transition-transform">
@@ -312,7 +313,7 @@ export default function ContactPage() {
                   </button>
                 </div>
               )}
-            </div>
+            </Reveal>
           </div>
         </section>
 
@@ -323,12 +324,12 @@ export default function ContactPage() {
           className="bg-[#d1decb] py-20 lg:py-24"
         >
           <div className="max-w-7xl mx-auto px-8 lg:px-16">
-            <div className="text-center mb-14">
+            <Reveal variant="rise" className="text-center mb-14">
               <p className="text-sage-dark text-[10px] tracking-[0.35em] uppercase font-medium mb-3">Kind Words</p>
               <h2 className="font-serif text-3xl lg:text-4xl text-charcoal">What our clients say.</h2>
-            </div>
+            </Reveal>
 
-            <div className="grid md:grid-cols-3 gap-6">
+            <Reveal stagger className="grid md:grid-cols-3 gap-6">
               {[
                 {
                   quote: "Working with Wellness Renew completely transformed how I approach my own mental health. I felt heard, supported, and genuinely cared for from our very first conversation.",
@@ -346,7 +347,7 @@ export default function ContactPage() {
                   role: "Healthcare Organisation",
                 },
               ].map(({ quote, name, role }) => (
-                <div key={name} className="bg-white rounded-2xl p-7 shadow-sm border border-charcoal/5 flex flex-col">
+                <div key={name} className="anim-card bg-white rounded-2xl p-7 shadow-sm border border-charcoal/5 flex flex-col">
                   <div className="text-[#d1decb] font-serif text-5xl leading-none mb-4 text-charcoal/20">&ldquo;</div>
                   <p className="text-charcoal/70 text-sm leading-relaxed flex-1 mb-6 italic font-serif">
                     {quote}
@@ -362,7 +363,7 @@ export default function ContactPage() {
                   </div>
                 </div>
               ))}
-            </div>
+            </Reveal>
           </div>
         </section>
 
