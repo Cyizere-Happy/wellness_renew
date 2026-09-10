@@ -47,6 +47,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${cormorant.variable} ${nunitoSans.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-[#0f0e0c]">
+        {/* Arms the scroll-reveal motion layer before first paint so the
+            resting (hidden) state only applies when JS can bring it back.
+            Without JS, every element stays fully visible. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "document.documentElement.classList.add('anim-ready')",
+          }}
+        />
         <RootProviders>
           {children}
           <StickyBookingButton />

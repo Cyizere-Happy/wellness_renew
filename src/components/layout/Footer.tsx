@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import BookingButton from '@/components/ui/BookingButton'
+import Reveal from '@/components/anim/Reveal'
 
 const SERVICES_LIST = [
   'Counselling',
@@ -16,7 +17,10 @@ export default function Footer() {
     <footer id="contact" aria-label="Site footer" className="bg-[#1f291d]">
       {/* CTA band */}
       <div className="bg-[#d1decb] py-14">
-        <div className="max-w-7xl mx-auto px-10 lg:px-32 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+        <Reveal
+          variant="rise"
+          className="max-w-7xl mx-auto px-10 lg:px-32 flex flex-col md:flex-row items-start md:items-center justify-between gap-8"
+        >
           <div>
             <p className="text-sage-dark text-[10px] tracking-[0.3em] uppercase mb-2 font-medium">
               Take the First Step
@@ -34,11 +38,14 @@ export default function Footer() {
           >
             Book a Free Consultation
           </BookingButton>
-        </div>
+        </Reveal>
       </div>
 
       {/* Main footer grid */}
-      <div className="max-w-7xl mx-auto px-10 lg:px-32 py-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      <Reveal
+        stagger
+        className="max-w-7xl mx-auto px-10 lg:px-32 py-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10"
+      >
         {/* Brand */}
         <div className="lg:col-span-2">
           <div className="flex items-center gap-3 mb-5">
@@ -63,7 +70,7 @@ export default function Footer() {
                 href="#"
                 aria-label={social}
                 id={`social-${social.toLowerCase()}`}
-                className="w-8 h-8 rounded-full bg-cream/8 hover:bg-sage/30 flex items-center justify-center text-cream/40 hover:text-cream transition-all duration-200"
+                className="anim-lift w-8 h-8 rounded-full bg-cream/8 hover:bg-sage/30 flex items-center justify-center text-cream/40 hover:text-cream transition-all duration-200"
               >
                 <span className="text-[10px] font-bold">{social[0]}</span>
               </a>
@@ -118,7 +125,7 @@ export default function Footer() {
             </div>
           </address>
         </div>
-      </div>
+      </Reveal>
 
       {/* Bottom bar */}
       <div className="border-t border-cream/8 px-10 lg:px-32 py-5">
@@ -128,7 +135,7 @@ export default function Footer() {
           </p>
           <div className="flex gap-5">
             {['Privacy Policy', 'Terms of Service', 'Accessibility'].map((item) => (
-              <Link key={item} href="#" className="text-cream/25 text-xs hover:text-cream/50 transition-colors">
+              <Link key={item} href="#" className="anim-underline text-cream/25 text-xs hover:text-cream/50 transition-colors">
                 {item}
               </Link>
             ))}

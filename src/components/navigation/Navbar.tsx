@@ -18,7 +18,7 @@ export default function Navbar() {
   return (
     <header
       role="banner"
-      className="absolute top-0 left-0 right-0 z-50 bg-[#f5f4f0] rounded-b-[2rem] lg:rounded-b-[2.5rem] overflow-hidden"
+      className="anim-header absolute top-0 left-0 right-0 z-50 bg-[#f5f4f0] rounded-b-[2rem] lg:rounded-b-[2.5rem] overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-8 lg:px-16 h-20 flex items-center justify-between gap-8">
         {/* Logo */}
@@ -35,7 +35,7 @@ export default function Navbar() {
             <Link
               key={label}
               href={href}
-              className="text-charcoal/70 text-[10px] font-medium tracking-[0.18em] uppercase hover:text-charcoal transition-colors duration-200"
+              className="anim-underline text-charcoal/70 text-[10px] font-medium tracking-[0.18em] uppercase hover:text-charcoal transition-colors duration-200"
             >
               {label}
             </Link>
@@ -46,7 +46,7 @@ export default function Navbar() {
         <div className="flex items-center gap-4">
           <BookingButton
             id="nav-cta-btn"
-            className="hidden lg:inline-flex items-center px-8 py-3.5 rounded-full bg-[#d1decb] hover:bg-[#c0ceb9] text-charcoal text-[9px] font-bold tracking-[0.2em] uppercase transition-colors duration-300"
+            className="anim-lift hidden lg:inline-flex items-center px-8 py-3.5 rounded-full bg-[#d1decb] hover:bg-[#c0ceb9] text-charcoal text-[9px] font-bold tracking-[0.2em] uppercase transition-colors duration-300"
           >
             Start Here
           </BookingButton>
